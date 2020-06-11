@@ -299,6 +299,10 @@ namespace AfterHoursWorkDLL {
             
             private global::System.Data.DataColumn columnInETA;
             
+            private global::System.Data.DataColumn columnDataEntryDate;
+            
+            private global::System.Data.DataColumn columnOfficeID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public employeeovernightworkDataTable() {
@@ -414,6 +418,22 @@ namespace AfterHoursWorkDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DataEntryDateColumn {
+                get {
+                    return this.columnDataEntryDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OfficeIDColumn {
+                get {
+                    return this.columnOfficeID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +469,7 @@ namespace AfterHoursWorkDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public employeeovernightworkRow AddemployeeovernightworkRow(int DepartmentID, int EmployeeID, int ManagerID, int VehicleID, int ProjectID, System.DateTime WorkDate, string OutTime, string WorkLocation, string InETA) {
+            public employeeovernightworkRow AddemployeeovernightworkRow(int DepartmentID, int EmployeeID, int ManagerID, int VehicleID, int ProjectID, System.DateTime WorkDate, string OutTime, string WorkLocation, string InETA, System.DateTime DataEntryDate, int OfficeID) {
                 employeeovernightworkRow rowemployeeovernightworkRow = ((employeeovernightworkRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -461,7 +481,9 @@ namespace AfterHoursWorkDLL {
                         WorkDate,
                         OutTime,
                         WorkLocation,
-                        InETA};
+                        InETA,
+                        DataEntryDate,
+                        OfficeID};
                 rowemployeeovernightworkRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemployeeovernightworkRow);
                 return rowemployeeovernightworkRow;
@@ -501,6 +523,8 @@ namespace AfterHoursWorkDLL {
                 this.columnOutTime = base.Columns["OutTime"];
                 this.columnWorkLocation = base.Columns["WorkLocation"];
                 this.columnInETA = base.Columns["InETA"];
+                this.columnDataEntryDate = base.Columns["DataEntryDate"];
+                this.columnOfficeID = base.Columns["OfficeID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +550,10 @@ namespace AfterHoursWorkDLL {
                 base.Columns.Add(this.columnWorkLocation);
                 this.columnInETA = new global::System.Data.DataColumn("InETA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInETA);
+                this.columnDataEntryDate = new global::System.Data.DataColumn("DataEntryDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataEntryDate);
+                this.columnOfficeID = new global::System.Data.DataColumn("OfficeID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOfficeID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTransactionID}, true));
                 this.columnTransactionID.AutoIncrement = true;
@@ -546,6 +574,8 @@ namespace AfterHoursWorkDLL {
                 this.columnWorkLocation.MaxLength = 2147483647;
                 this.columnInETA.AllowDBNull = false;
                 this.columnInETA.MaxLength = 2147483647;
+                this.columnDataEntryDate.AllowDBNull = false;
+                this.columnOfficeID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -795,6 +825,28 @@ namespace AfterHoursWorkDLL {
                     this[this.tableemployeeovernightwork.InETAColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime DataEntryDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableemployeeovernightwork.DataEntryDateColumn]));
+                }
+                set {
+                    this[this.tableemployeeovernightwork.DataEntryDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OfficeID {
+                get {
+                    return ((int)(this[this.tableemployeeovernightwork.OfficeIDColumn]));
+                }
+                set {
+                    this[this.tableemployeeovernightwork.OfficeIDColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -966,10 +1018,12 @@ namespace AfterHoursWorkDLL.EmployeeOverNightWorkDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("OutTime", "OutTime");
             tableMapping.ColumnMappings.Add("WorkLocation", "WorkLocation");
             tableMapping.ColumnMappings.Add("InETA", "InETA");
+            tableMapping.ColumnMappings.Add("DataEntryDate", "DataEntryDate");
+            tableMapping.ColumnMappings.Add("OfficeID", "OfficeID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[employeeovernightwork] WHERE (([TransactionID] = @Original_TransactionID) AND ([DepartmentID] = @Original_DepartmentID) AND ([EmployeeID] = @Original_EmployeeID) AND ([ManagerID] = @Original_ManagerID) AND ([VehicleID] = @Original_VehicleID) AND ([ProjectID] = @Original_ProjectID) AND ([WorkDate] = @Original_WorkDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [employeeovernightwork] WHERE (([TransactionID] = @Original_TransactionID) AND ([DepartmentID] = @Original_DepartmentID) AND ([EmployeeID] = @Original_EmployeeID) AND ([ManagerID] = @Original_ManagerID) AND ([VehicleID] = @Original_VehicleID) AND ([ProjectID] = @Original_ProjectID) AND ([WorkDate] = @Original_WorkDate) AND ([DataEntryDate] = @Original_DataEntryDate) AND ([OfficeID] = @Original_OfficeID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DepartmentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -978,10 +1032,12 @@ namespace AfterHoursWorkDLL.EmployeeOverNightWorkDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VehicleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VehicleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataEntryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataEntryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OfficeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[employeeovernightwork] ([DepartmentID], [EmployeeID], [ManagerID], [VehicleID], [ProjectID], [WorkDate], [OutTime], [WorkLocation], [InETA]) VALUES (@DepartmentID, @EmployeeID, @ManagerID, @VehicleID, @ProjectID, @WorkDate, @OutTime, @WorkLocation, @InETA);
-SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, WorkDate, OutTime, WorkLocation, InETA FROM employeeovernightwork WHERE (TransactionID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [employeeovernightwork] ([DepartmentID], [EmployeeID], [ManagerID], [VehicleID], [ProjectID], [WorkDate], [OutTime], [WorkLocation], [InETA], [DataEntryDate], [OfficeID]) VALUES (@DepartmentID, @EmployeeID, @ManagerID, @VehicleID, @ProjectID, @WorkDate, @OutTime, @WorkLocation, @InETA, @DataEntryDate, @OfficeID);
+SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, WorkDate, OutTime, WorkLocation, InETA, DataEntryDate, OfficeID FROM employeeovernightwork WHERE (TransactionID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -992,10 +1048,12 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OutTime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OutTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkLocation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkLocation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InETA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InETA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataEntryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataEntryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[employeeovernightwork] SET [DepartmentID] = @DepartmentID, [EmployeeID] = @EmployeeID, [ManagerID] = @ManagerID, [VehicleID] = @VehicleID, [ProjectID] = @ProjectID, [WorkDate] = @WorkDate, [OutTime] = @OutTime, [WorkLocation] = @WorkLocation, [InETA] = @InETA WHERE (([TransactionID] = @Original_TransactionID) AND ([DepartmentID] = @Original_DepartmentID) AND ([EmployeeID] = @Original_EmployeeID) AND ([ManagerID] = @Original_ManagerID) AND ([VehicleID] = @Original_VehicleID) AND ([ProjectID] = @Original_ProjectID) AND ([WorkDate] = @Original_WorkDate));
-SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, WorkDate, OutTime, WorkLocation, InETA FROM employeeovernightwork WHERE (TransactionID = @TransactionID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [employeeovernightwork] SET [DepartmentID] = @DepartmentID, [EmployeeID] = @EmployeeID, [ManagerID] = @ManagerID, [VehicleID] = @VehicleID, [ProjectID] = @ProjectID, [WorkDate] = @WorkDate, [OutTime] = @OutTime, [WorkLocation] = @WorkLocation, [InETA] = @InETA, [DataEntryDate] = @DataEntryDate, [OfficeID] = @OfficeID WHERE (([TransactionID] = @Original_TransactionID) AND ([DepartmentID] = @Original_DepartmentID) AND ([EmployeeID] = @Original_EmployeeID) AND ([ManagerID] = @Original_ManagerID) AND ([VehicleID] = @Original_VehicleID) AND ([ProjectID] = @Original_ProjectID) AND ([WorkDate] = @Original_WorkDate) AND ([DataEntryDate] = @Original_DataEntryDate) AND ([OfficeID] = @Original_OfficeID));
+SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, WorkDate, OutTime, WorkLocation, InETA, DataEntryDate, OfficeID FROM employeeovernightwork WHERE (TransactionID = @TransactionID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1006,6 +1064,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OutTime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OutTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkLocation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkLocation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InETA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InETA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataEntryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataEntryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DepartmentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1013,6 +1073,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VehicleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VehicleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataEntryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataEntryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OfficeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1030,7 +1092,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, " +
-                "WorkDate, OutTime, WorkLocation, InETA FROM dbo.employeeovernightwork";
+                "WorkDate, OutTime, WorkLocation, InETA, DataEntryDate, OfficeID FROM employeeove" +
+                "rnightwork";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1091,7 +1154,7 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TransactionID, int Original_DepartmentID, int Original_EmployeeID, int Original_ManagerID, int Original_VehicleID, int Original_ProjectID, System.DateTime Original_WorkDate) {
+        public virtual int Delete(int Original_TransactionID, int Original_DepartmentID, int Original_EmployeeID, int Original_ManagerID, int Original_VehicleID, int Original_ProjectID, System.DateTime Original_WorkDate, System.DateTime Original_DataEntryDate, int Original_OfficeID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TransactionID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_DepartmentID));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_EmployeeID));
@@ -1099,6 +1162,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_VehicleID));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_ProjectID));
             this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_WorkDate));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_DataEntryDate));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_OfficeID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1119,7 +1184,7 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int DepartmentID, int EmployeeID, int ManagerID, int VehicleID, int ProjectID, System.DateTime WorkDate, string OutTime, string WorkLocation, string InETA) {
+        public virtual int Insert(int DepartmentID, int EmployeeID, int ManagerID, int VehicleID, int ProjectID, System.DateTime WorkDate, string OutTime, string WorkLocation, string InETA, System.DateTime DataEntryDate, int OfficeID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(DepartmentID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(EmployeeID));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ManagerID));
@@ -1144,6 +1209,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(InETA));
             }
+            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(DataEntryDate));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(OfficeID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1174,6 +1241,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
                     string OutTime, 
                     string WorkLocation, 
                     string InETA, 
+                    System.DateTime DataEntryDate, 
+                    int OfficeID, 
                     int Original_TransactionID, 
                     int Original_DepartmentID, 
                     int Original_EmployeeID, 
@@ -1181,6 +1250,8 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
                     int Original_VehicleID, 
                     int Original_ProjectID, 
                     System.DateTime Original_WorkDate, 
+                    System.DateTime Original_DataEntryDate, 
+                    int Original_OfficeID, 
                     int TransactionID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(DepartmentID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(EmployeeID));
@@ -1206,14 +1277,18 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(InETA));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_TransactionID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_DepartmentID));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_EmployeeID));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ManagerID));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_VehicleID));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ProjectID));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_WorkDate));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(TransactionID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(DataEntryDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(OfficeID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TransactionID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_DepartmentID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_EmployeeID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ManagerID));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_VehicleID));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_ProjectID));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_WorkDate));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_DataEntryDate));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_OfficeID));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(TransactionID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1244,14 +1319,18 @@ SELECT TransactionID, DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID,
                     string OutTime, 
                     string WorkLocation, 
                     string InETA, 
+                    System.DateTime DataEntryDate, 
+                    int OfficeID, 
                     int Original_TransactionID, 
                     int Original_DepartmentID, 
                     int Original_EmployeeID, 
                     int Original_ManagerID, 
                     int Original_VehicleID, 
                     int Original_ProjectID, 
-                    System.DateTime Original_WorkDate) {
-            return this.Update(DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, WorkDate, OutTime, WorkLocation, InETA, Original_TransactionID, Original_DepartmentID, Original_EmployeeID, Original_ManagerID, Original_VehicleID, Original_ProjectID, Original_WorkDate, Original_TransactionID);
+                    System.DateTime Original_WorkDate, 
+                    System.DateTime Original_DataEntryDate, 
+                    int Original_OfficeID) {
+            return this.Update(DepartmentID, EmployeeID, ManagerID, VehicleID, ProjectID, WorkDate, OutTime, WorkLocation, InETA, DataEntryDate, OfficeID, Original_TransactionID, Original_DepartmentID, Original_EmployeeID, Original_ManagerID, Original_VehicleID, Original_ProjectID, Original_WorkDate, Original_DataEntryDate, Original_OfficeID, Original_TransactionID);
         }
     }
     

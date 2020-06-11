@@ -274,6 +274,7 @@ namespace AfterHoursWorkDLL.InsertEmployeeOverNightWorkEntryTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.InsertEmployeeOvernightWork";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ManagerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -289,67 +290,73 @@ namespace AfterHoursWorkDLL.InsertEmployeeOverNightWorkEntryTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertEmployeeOvernightWork(global::System.Nullable<int> DepartmentID, global::System.Nullable<int> EmployeeID, global::System.Nullable<int> ManagerID, global::System.Nullable<int> VehicleID, global::System.Nullable<int> ProjectID, global::System.Nullable<global::System.DateTime> WorkDate, string OutTime, string WorkLocation, string InETA, global::System.Nullable<global::System.DateTime> DataEntryDate) {
+        public virtual int InsertEmployeeOvernightWork(global::System.Nullable<int> OfficeID, global::System.Nullable<int> DepartmentID, global::System.Nullable<int> EmployeeID, global::System.Nullable<int> ManagerID, global::System.Nullable<int> VehicleID, global::System.Nullable<int> ProjectID, global::System.Nullable<global::System.DateTime> WorkDate, string OutTime, string WorkLocation, string InETA, global::System.Nullable<global::System.DateTime> DataEntryDate) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
-            if ((DepartmentID.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(DepartmentID.Value));
+            if ((OfficeID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(OfficeID.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((EmployeeID.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(EmployeeID.Value));
+            if ((DepartmentID.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(DepartmentID.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((ManagerID.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(ManagerID.Value));
+            if ((EmployeeID.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(EmployeeID.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((VehicleID.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(VehicleID.Value));
+            if ((ManagerID.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(ManagerID.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((ProjectID.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(ProjectID.Value));
+            if ((VehicleID.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(VehicleID.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((WorkDate.HasValue == true)) {
-                command.Parameters[6].Value = ((System.DateTime)(WorkDate.Value));
+            if ((ProjectID.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(ProjectID.Value));
             }
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((OutTime == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
+            if ((WorkDate.HasValue == true)) {
+                command.Parameters[7].Value = ((System.DateTime)(WorkDate.Value));
             }
             else {
-                command.Parameters[7].Value = ((string)(OutTime));
+                command.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((WorkLocation == null)) {
+            if ((OutTime == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[8].Value = ((string)(WorkLocation));
+                command.Parameters[8].Value = ((string)(OutTime));
             }
-            if ((InETA == null)) {
+            if ((WorkLocation == null)) {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[9].Value = ((string)(InETA));
+                command.Parameters[9].Value = ((string)(WorkLocation));
             }
-            if ((DataEntryDate.HasValue == true)) {
-                command.Parameters[10].Value = ((System.DateTime)(DataEntryDate.Value));
+            if ((InETA == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
+                command.Parameters[10].Value = ((string)(InETA));
+            }
+            if ((DataEntryDate.HasValue == true)) {
+                command.Parameters[11].Value = ((System.DateTime)(DataEntryDate.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

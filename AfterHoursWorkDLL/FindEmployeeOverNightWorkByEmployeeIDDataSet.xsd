@@ -35,6 +35,7 @@
               <Mapping SourceColumn="OutTime" DataSetColumn="OutTime" />
               <Mapping SourceColumn="WorkDate1" DataSetColumn="WorkDate1" />
               <Mapping SourceColumn="InETA" DataSetColumn="InETA" />
+              <Mapping SourceColumn="OfficeID" DataSetColumn="OfficeID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -46,7 +47,7 @@
   <xs:element name="FindEmployeeOverNightWorkByEmployeeIDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FindEmployeeOverNightWorkByEmployeeIDDataSet" msprop:Generator_UserDSName="FindEmployeeOverNightWorkByEmployeeIDDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FindEmployeeOverNightWorkByEmployeeID" msprop:Generator_TableClassName="FindEmployeeOverNightWorkByEmployeeIDDataTable" msprop:Generator_TableVarName="tableFindEmployeeOverNightWorkByEmployeeID" msprop:Generator_TablePropName="FindEmployeeOverNightWorkByEmployeeID" msprop:Generator_RowDeletingName="FindEmployeeOverNightWorkByEmployeeIDRowDeleting" msprop:Generator_RowChangingName="FindEmployeeOverNightWorkByEmployeeIDRowChanging" msprop:Generator_RowEvHandlerName="FindEmployeeOverNightWorkByEmployeeIDRowChangeEventHandler" msprop:Generator_RowDeletedName="FindEmployeeOverNightWorkByEmployeeIDRowDeleted" msprop:Generator_UserTableName="FindEmployeeOverNightWorkByEmployeeID" msprop:Generator_RowChangedName="FindEmployeeOverNightWorkByEmployeeIDRowChanged" msprop:Generator_RowEvArgName="FindEmployeeOverNightWorkByEmployeeIDRowChangeEvent" msprop:Generator_RowClassName="FindEmployeeOverNightWorkByEmployeeIDRow">
+        <xs:element name="FindEmployeeOverNightWorkByEmployeeID" msprop:Generator_TableClassName="FindEmployeeOverNightWorkByEmployeeIDDataTable" msprop:Generator_TableVarName="tableFindEmployeeOverNightWorkByEmployeeID" msprop:Generator_RowChangedName="FindEmployeeOverNightWorkByEmployeeIDRowChanged" msprop:Generator_TablePropName="FindEmployeeOverNightWorkByEmployeeID" msprop:Generator_RowDeletingName="FindEmployeeOverNightWorkByEmployeeIDRowDeleting" msprop:Generator_RowChangingName="FindEmployeeOverNightWorkByEmployeeIDRowChanging" msprop:Generator_RowEvHandlerName="FindEmployeeOverNightWorkByEmployeeIDRowChangeEventHandler" msprop:Generator_RowDeletedName="FindEmployeeOverNightWorkByEmployeeIDRowDeleted" msprop:Generator_RowClassName="FindEmployeeOverNightWorkByEmployeeIDRow" msprop:Generator_UserTableName="FindEmployeeOverNightWorkByEmployeeID" msprop:Generator_RowEvArgName="FindEmployeeOverNightWorkByEmployeeIDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TransactionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID" type="xs:int" />
@@ -108,6 +109,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="OfficeID" msprop:Generator_ColumnVarNameInTable="columnOfficeID" msprop:Generator_ColumnPropNameInRow="OfficeID" msprop:Generator_ColumnPropNameInTable="OfficeIDColumn" msprop:Generator_UserColumnName="OfficeID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

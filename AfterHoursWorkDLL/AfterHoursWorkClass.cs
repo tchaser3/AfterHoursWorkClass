@@ -63,14 +63,14 @@ namespace AfterHoursWorkDLL
 
             return aFindEmployeeOverNightWorkByDataEntryDateMatchDataSet;
         }
-        public bool InsertEmployeeOverNightWork(int intDepartmentID, int intEmployee, int intManagerID, int intVehicleID, int intProjectID, DateTime datWorkDate, string strOutTime, string strWorkLocation, string strInETA, DateTime datDataEntryDate)
+        public bool InsertEmployeeOverNightWork(int intOfficeID,  int intDepartmentID, int intEmployee, int intManagerID, int intVehicleID, int intProjectID, DateTime datWorkDate, string strOutTime, string strWorkLocation, string strInETA, DateTime datDataEntryDate)
         {
             bool blnFatalError = false;
 
             try
             {
                 aInsertEmployeeOverNightWorkTableAdapter = new InsertEmployeeOverNightWorkEntryTableAdapters.QueriesTableAdapter();
-                aInsertEmployeeOverNightWorkTableAdapter.InsertEmployeeOvernightWork(intDepartmentID, intEmployee, intManagerID, intVehicleID, intProjectID, datWorkDate, strOutTime, strWorkLocation, strInETA, datDataEntryDate);
+                aInsertEmployeeOverNightWorkTableAdapter.InsertEmployeeOvernightWork(intOfficeID, intDepartmentID, intEmployee, intManagerID, intVehicleID, intProjectID, datWorkDate, strOutTime, strWorkLocation, strInETA, datDataEntryDate);
             }
             catch (Exception Ex)
             {
