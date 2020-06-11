@@ -34,9 +34,9 @@
               <Mapping SourceColumn="AssignedProjectID" DataSetColumn="AssignedProjectID" />
               <Mapping SourceColumn="WorkDate" DataSetColumn="WorkDate" />
               <Mapping SourceColumn="OutTime" DataSetColumn="OutTime" />
-              <Mapping SourceColumn="WorkDate1" DataSetColumn="WorkDate1" />
               <Mapping SourceColumn="InETA" DataSetColumn="InETA" />
               <Mapping SourceColumn="OfficeID" DataSetColumn="OfficeID" />
+              <Mapping SourceColumn="WorkLocation" DataSetColumn="WorkLocation" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -48,7 +48,7 @@
   <xs:element name="FindEmployeeOverNightWorkbyDataEntryDateMatchDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FindEmployeeOverNightWorkbyDataEntryDateMatchDataSet" msprop:Generator_UserDSName="FindEmployeeOverNightWorkbyDataEntryDateMatchDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_TableClassName="FindEmployeeOverNightWorkByDataEntryDateMatchDataTable" msprop:Generator_TableVarName="tableFindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_RowChangedName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChanged" msprop:Generator_TablePropName="FindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_RowDeletingName="FindEmployeeOverNightWorkByDataEntryDateMatchRowDeleting" msprop:Generator_RowChangingName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChanging" msprop:Generator_RowEvHandlerName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChangeEventHandler" msprop:Generator_RowDeletedName="FindEmployeeOverNightWorkByDataEntryDateMatchRowDeleted" msprop:Generator_RowClassName="FindEmployeeOverNightWorkByDataEntryDateMatchRow" msprop:Generator_UserTableName="FindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_RowEvArgName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChangeEvent">
+        <xs:element name="FindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_TableClassName="FindEmployeeOverNightWorkByDataEntryDateMatchDataTable" msprop:Generator_TableVarName="tableFindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_TablePropName="FindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_RowDeletingName="FindEmployeeOverNightWorkByDataEntryDateMatchRowDeleting" msprop:Generator_RowChangingName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChanging" msprop:Generator_RowEvHandlerName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChangeEventHandler" msprop:Generator_RowDeletedName="FindEmployeeOverNightWorkByDataEntryDateMatchRowDeleted" msprop:Generator_UserTableName="FindEmployeeOverNightWorkByDataEntryDateMatch" msprop:Generator_RowChangedName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChanged" msprop:Generator_RowEvArgName="FindEmployeeOverNightWorkByDataEntryDateMatchRowChangeEvent" msprop:Generator_RowClassName="FindEmployeeOverNightWorkByDataEntryDateMatchRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TransactionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID" type="xs:int" />
@@ -99,7 +99,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="WorkDate1" msprop:Generator_ColumnVarNameInTable="columnWorkDate1" msprop:Generator_ColumnPropNameInRow="WorkDate1" msprop:Generator_ColumnPropNameInTable="WorkDate1Column" msprop:Generator_UserColumnName="WorkDate1" type="xs:dateTime" />
               <xs:element name="InETA" msprop:Generator_ColumnVarNameInTable="columnInETA" msprop:Generator_ColumnPropNameInRow="InETA" msprop:Generator_ColumnPropNameInTable="InETAColumn" msprop:Generator_UserColumnName="InETA">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -108,6 +107,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="OfficeID" msprop:Generator_ColumnVarNameInTable="columnOfficeID" msprop:Generator_ColumnPropNameInRow="OfficeID" msprop:Generator_ColumnPropNameInTable="OfficeIDColumn" msprop:Generator_UserColumnName="OfficeID" type="xs:int" />
+              <xs:element name="WorkLocation" msprop:Generator_ColumnVarNameInTable="columnWorkLocation" msprop:Generator_ColumnPropNameInRow="WorkLocation" msprop:Generator_ColumnPropNameInTable="WorkLocationColumn" msprop:Generator_UserColumnName="WorkLocation">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

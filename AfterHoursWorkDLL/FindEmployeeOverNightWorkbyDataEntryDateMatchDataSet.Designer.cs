@@ -303,11 +303,11 @@ namespace AfterHoursWorkDLL {
             
             private global::System.Data.DataColumn columnOutTime;
             
-            private global::System.Data.DataColumn columnWorkDate1;
-            
             private global::System.Data.DataColumn columnInETA;
             
             private global::System.Data.DataColumn columnOfficeID;
+            
+            private global::System.Data.DataColumn columnWorkLocation;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -440,14 +440,6 @@ namespace AfterHoursWorkDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn WorkDate1Column {
-                get {
-                    return this.columnWorkDate1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn InETAColumn {
                 get {
                     return this.columnInETA;
@@ -459,6 +451,14 @@ namespace AfterHoursWorkDLL {
             public global::System.Data.DataColumn OfficeIDColumn {
                 get {
                     return this.columnOfficeID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WorkLocationColumn {
+                get {
+                    return this.columnWorkLocation;
                 }
             }
             
@@ -499,7 +499,7 @@ namespace AfterHoursWorkDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindEmployeeOverNightWorkByDataEntryDateMatchRow AddFindEmployeeOverNightWorkByDataEntryDateMatchRow(int DepartmentID, string Department, int EmployeeID, string FirstName, string LastName, int VehicleID, string VehicleNumber, int ProjectID, string AssignedProjectID, System.DateTime WorkDate, string OutTime, System.DateTime WorkDate1, string InETA, int OfficeID) {
+            public FindEmployeeOverNightWorkByDataEntryDateMatchRow AddFindEmployeeOverNightWorkByDataEntryDateMatchRow(int DepartmentID, string Department, int EmployeeID, string FirstName, string LastName, int VehicleID, string VehicleNumber, int ProjectID, string AssignedProjectID, System.DateTime WorkDate, string OutTime, string InETA, int OfficeID, string WorkLocation) {
                 FindEmployeeOverNightWorkByDataEntryDateMatchRow rowFindEmployeeOverNightWorkByDataEntryDateMatchRow = ((FindEmployeeOverNightWorkByDataEntryDateMatchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -514,9 +514,9 @@ namespace AfterHoursWorkDLL {
                         AssignedProjectID,
                         WorkDate,
                         OutTime,
-                        WorkDate1,
                         InETA,
-                        OfficeID};
+                        OfficeID,
+                        WorkLocation};
                 rowFindEmployeeOverNightWorkByDataEntryDateMatchRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFindEmployeeOverNightWorkByDataEntryDateMatchRow);
                 return rowFindEmployeeOverNightWorkByDataEntryDateMatchRow;
@@ -558,9 +558,9 @@ namespace AfterHoursWorkDLL {
                 this.columnAssignedProjectID = base.Columns["AssignedProjectID"];
                 this.columnWorkDate = base.Columns["WorkDate"];
                 this.columnOutTime = base.Columns["OutTime"];
-                this.columnWorkDate1 = base.Columns["WorkDate1"];
                 this.columnInETA = base.Columns["InETA"];
                 this.columnOfficeID = base.Columns["OfficeID"];
+                this.columnWorkLocation = base.Columns["WorkLocation"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -590,12 +590,12 @@ namespace AfterHoursWorkDLL {
                 base.Columns.Add(this.columnWorkDate);
                 this.columnOutTime = new global::System.Data.DataColumn("OutTime", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOutTime);
-                this.columnWorkDate1 = new global::System.Data.DataColumn("WorkDate1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWorkDate1);
                 this.columnInETA = new global::System.Data.DataColumn("InETA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInETA);
                 this.columnOfficeID = new global::System.Data.DataColumn("OfficeID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOfficeID);
+                this.columnWorkLocation = new global::System.Data.DataColumn("WorkLocation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWorkLocation);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTransactionID}, true));
                 this.columnTransactionID.AutoIncrement = true;
@@ -619,10 +619,11 @@ namespace AfterHoursWorkDLL {
                 this.columnWorkDate.AllowDBNull = false;
                 this.columnOutTime.AllowDBNull = false;
                 this.columnOutTime.MaxLength = 2147483647;
-                this.columnWorkDate1.AllowDBNull = false;
                 this.columnInETA.AllowDBNull = false;
                 this.columnInETA.MaxLength = 2147483647;
                 this.columnOfficeID.AllowDBNull = false;
+                this.columnWorkLocation.AllowDBNull = false;
+                this.columnWorkLocation.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -897,17 +898,6 @@ namespace AfterHoursWorkDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime WorkDate1 {
-                get {
-                    return ((global::System.DateTime)(this[this.tableFindEmployeeOverNightWorkByDataEntryDateMatch.WorkDate1Column]));
-                }
-                set {
-                    this[this.tableFindEmployeeOverNightWorkByDataEntryDateMatch.WorkDate1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string InETA {
                 get {
                     return ((string)(this[this.tableFindEmployeeOverNightWorkByDataEntryDateMatch.InETAColumn]));
@@ -925,6 +915,17 @@ namespace AfterHoursWorkDLL {
                 }
                 set {
                     this[this.tableFindEmployeeOverNightWorkByDataEntryDateMatch.OfficeIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string WorkLocation {
+                get {
+                    return ((string)(this[this.tableFindEmployeeOverNightWorkByDataEntryDateMatch.WorkLocationColumn]));
+                }
+                set {
+                    this[this.tableFindEmployeeOverNightWorkByDataEntryDateMatch.WorkLocationColumn] = value;
                 }
             }
         }
@@ -1100,9 +1101,9 @@ namespace AfterHoursWorkDLL.FindEmployeeOverNightWorkbyDataEntryDateMatchDataSet
             tableMapping.ColumnMappings.Add("AssignedProjectID", "AssignedProjectID");
             tableMapping.ColumnMappings.Add("WorkDate", "WorkDate");
             tableMapping.ColumnMappings.Add("OutTime", "OutTime");
-            tableMapping.ColumnMappings.Add("WorkDate1", "WorkDate1");
             tableMapping.ColumnMappings.Add("InETA", "InETA");
             tableMapping.ColumnMappings.Add("OfficeID", "OfficeID");
+            tableMapping.ColumnMappings.Add("WorkLocation", "WorkLocation");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
