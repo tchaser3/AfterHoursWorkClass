@@ -33,6 +33,24 @@ namespace AfterHoursWorkDLL
         FindEmployeeOverNightWorkByEmployeeIDDataSet aFindEmployeeOverNightWorkByEmployeeIDDataSet;
         FindEmployeeOverNightWorkByEmployeeIDDataSetTableAdapters.FindEmployeeOverNightWorkByEmployeeIDTableAdapter aFindEmployeeOverNightWorkByEmployeeIDTableAdapter;
 
+        FindEmployeeOverNightWorkByManagerIDDataSet aFindEmployeeOverNightWorkByManagerIDDataSet;
+        FindEmployeeOverNightWorkByManagerIDDataSetTableAdapters.FindEmployeeOverNightWorkByManagerIDTableAdapter aFindEmployeeOverNightWorkByManagerIDTableAdapter;
+
+        public FindEmployeeOverNightWorkByManagerIDDataSet FindEmployeeOverNightWorkByManagerID(int intManagerID, DateTime datStartDate, DateTime datEndDate)
+        {
+            try
+            {
+                aFindEmployeeOverNightWorkByManagerIDDataSet = new FindEmployeeOverNightWorkByManagerIDDataSet();
+                aFindEmployeeOverNightWorkByManagerIDTableAdapter = new FindEmployeeOverNightWorkByManagerIDDataSetTableAdapters.FindEmployeeOverNightWorkByManagerIDTableAdapter();
+                aFindEmployeeOverNightWorkByManagerIDTableAdapter.Fill(aFindEmployeeOverNightWorkByManagerIDDataSet.FindEmployeeOverNightWorkByManagerID, intManagerID, datStartDate, datEndDate);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "After Hours Work Class // Find Employee Over Night Work By Manager ID " + Ex.Message);
+            }
+
+            return aFindEmployeeOverNightWorkByManagerIDDataSet;
+        }
         public FindEmployeeOverNightWorkByEmployeeIDDataSet FindEmployeeOverNightWorkByEmployeeID(int intEmployeeID, DateTime datStartDate, DateTime datEndDate)
         {
             try

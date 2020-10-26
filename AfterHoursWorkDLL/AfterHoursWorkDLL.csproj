@@ -60,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindEmployeeOverNightWorkByEmployeeIDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindEmployeeOverNightWorkByManagerIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindEmployeeOverNightWorkByManagerIDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InsertEmployeeOverNightWorkEntry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +111,17 @@
     </None>
     <None Include="FindEmployeeOverNightWorkByEmployeeIDDataSet.xss">
       <DependentUpon>FindEmployeeOverNightWorkByEmployeeIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindEmployeeOverNightWorkByManagerIDDataSet.xsc">
+      <DependentUpon>FindEmployeeOverNightWorkByManagerIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindEmployeeOverNightWorkByManagerIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindEmployeeOverNightWorkByManagerIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindEmployeeOverNightWorkByManagerIDDataSet.xss">
+      <DependentUpon>FindEmployeeOverNightWorkByManagerIDDataSet.xsd</DependentUpon>
     </None>
     <None Include="InsertEmployeeOverNightWorkEntry.xsc">
       <DependentUpon>InsertEmployeeOverNightWorkEntry.xsd</DependentUpon>
